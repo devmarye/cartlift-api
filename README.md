@@ -13,6 +13,7 @@ This project is being developed as a DevOps portfolio project with Docker, GitHu
 - GET /health
 - GET /products
 - GET /products/:id
+- POST /products
 
 ## Tech Stack
 
@@ -29,10 +30,9 @@ This project is being developed as a DevOps portfolio project with Docker, GitHu
 npm install
 npm start
 
-## Run with Docker
+## Run with Docker compose
 ```bash
-docker build -t cartlift-api .
-docker run -p 3000:3000 cartlift-api
+docker compose up --build
 
 ## Environment Variables 
 Create a .env file using .env.example

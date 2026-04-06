@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: cartlift-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cartlift
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: cartlift-api
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: cartlift
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:

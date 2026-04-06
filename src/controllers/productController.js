@@ -46,7 +46,40 @@ const getProductById = async (req, res) => {
   }
 };
 
+const createProduct = async (req, res) => {
+  const { name, description, price, stock } = req.body;
+
+  if (!name || !description || price === undefined || stock === undefined) {
+    return res.status(400).json({
+      success: false,
+      message: "name, description, price, and stock are required",
+    });
+  }
+
+  try {
+    const result = await pool.query(
+      `INSERT INTO products (name, description, price, stock)
+       VALUES ($1, $2, $3, $4)
+       RETURNING *`,
+      [name, description, price, stock]
+    );
+
+    res.status(201).json({
+      success: true,
+      message: "Product created successfully",
+      data: result.rows[0],
+    });
+  } catch (error) {
+    console.error("Error creating product:", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Failed to create product",
+    });
+  }
+};
+
 module.exports = {
   getProducts,
   getProductById,
+  createProduct,
 };
