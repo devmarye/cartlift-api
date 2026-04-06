@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const requiredEnvVars = [
-  "PORT",
   "DB_HOST",
   "DB_PORT",
   "DB_NAME",
@@ -16,7 +15,7 @@ requiredEnvVars.forEach((key) => {
 });
 
 module.exports = {
-  PORT: process.env.PORT,
+  PORT: process.env.PORT || 3000,
   DB_HOST: process.env.DB_HOST,
   DB_PORT: process.env.DB_PORT,
   DB_NAME: process.env.DB_NAME,
