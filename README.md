@@ -7,7 +7,7 @@ This project is being developed as a DevOps portfolio project with Docker, GitHu
 - Health check endpoint
 - Product listing endpoint
 - Single product lookup endpoint
-- - Product creation endpoint
+- Product creation endpoint
 - PostgreSQL integration
 - Dockerized local development
 - Docker Compose support
@@ -52,5 +52,4 @@ docker compose up --build
 Create a .env file using .env.example
 
 ## Project Goal
-
 Build and deploy a production-style e-commerce API through a complete DevOps pipeline with containerization, CI/CD, infrastructure as code, and AWS hosting.
