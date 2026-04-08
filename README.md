@@ -18,6 +18,10 @@ This project is being developed as a DevOps portfolio project with Docker, GitHu
 - GET /products/:id
 - POST /products
 
+## Architecture Diagram
+![Architecture Diagram](./Cartlift.png)
+
+
 ## Sample Request Body
 
 ```json
@@ -27,6 +31,7 @@ This project is being developed as a DevOps portfolio project with Docker, GitHu
   "price": 39.99,
   "stock": 15
 }
+```
 
 ## Tech Stack
 
@@ -43,10 +48,12 @@ This project is being developed as a DevOps portfolio project with Docker, GitHu
 ```bash
 npm install
 npm start
+```
 
 ## Run with Docker compose
 ```bash
 docker compose up --build
+```
 
 ## Environment Variables 
 Create a .env file using .env.example
