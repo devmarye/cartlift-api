@@ -1,4 +1,9 @@
-aws_region    = "us-east-1"
-instance_type = "t2.micro"
-ami_id        = "ami-xxxxxxxxxxxxxxxxx"
-key_name      = "your-keypair-name"
+aws_region        = "us-east-1"
+instance_type     = "t2.micro"
+ami_id            = "ami-xxxxxxxxxxxxxxxxx"
+key_name          = "your-keypair-name"
+
+db_name           = "cartlift"
+db_username       = "postgres"
+db_password       = "change-this-securely"
+db_instance_class = "db.t3.micro"
